@@ -1,0 +1,41 @@
+#include<stdio.h>
+
+int main()
+{
+    int num[5],check[3], z=5;
+    printf("Enter number: \n");
+    for(int i =0; i<5; i++)
+    {
+        scanf("%d",&num[i]);
+    }
+    printf("Your number are:\n");
+    for(int i=0; i<5; i++)
+    {
+        printf("%d\t",num[i]);
+    }
+    printf("\nEnter number to delete:\n");
+    for(int i =0; i<3; i++)
+    {
+        scanf("%d",&check[i]);
+    }
+    for(int a=0; a<5; a++)
+    {
+        for(int b=0; b<3; b++)
+        {
+            if(num[a]==check[b])
+            {
+                for(int c=a; c<5; c++)
+                {
+                    num[c]=num[c+1];
+                }
+                z--;
+                a--;
+            }
+        }
+    }
+    for(int i =0; i<z; i++)
+    {
+        printf("%d\t",num[i]);
+    }
+    return 0;
+}
